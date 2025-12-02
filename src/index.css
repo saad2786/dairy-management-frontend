@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: "Outfit", sans-serif;
+  color: var(--color-grey-700);
+
+  transition: color 0.3s, background-color 0.3s;
+  min-height: 100vh;
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+html,*{
+  padding: 0;
+  margin: 0;
+ 
+
+}
+.text-vertical{
+  writing-mode: vertical-rl;
+text-orientation: mixed;
+
+}
+
+::-webkit-scrollbar {
+  width: 0px; 
+  height: 8px;
+  background-color: #f3f3f6;/* width of the entire scrollbar */
+}
+::-webkit-scrollbar-thumb{
+  background-color: slategray;
+  border-radius: 0px;
+}
+.loader {
+  width: 45px;
+  aspect-ratio: 0.75;
+  --c: no-repeat linear-gradient(#333 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 20% 50%;
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
