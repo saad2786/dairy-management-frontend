@@ -52,8 +52,9 @@ export default function GenerateBill({ setBills, closeModal }) {
         method: "POST",
         mode: "cors",
         headers: {
+          "authorization": `Bearer ${localStorage.getItem('token')}`,
           "Content-type": "application/json",
-          Accept: "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify({
           endDate: format(data.endDate, "yyyy-MM-dd"),

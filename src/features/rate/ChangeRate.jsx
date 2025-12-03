@@ -28,8 +28,9 @@ export default function ChangeRate() {
         method: "POST",
         mode: "cors",
         headers: {
+          "authorization": `Bearer ${localStorage.getItem('token')}`,
           "Content-type": "application/json",
-          Accept: "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify({ ...data, dairyId }),
       });

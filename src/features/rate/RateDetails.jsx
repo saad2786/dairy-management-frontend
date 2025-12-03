@@ -15,7 +15,7 @@ function RateDetails() {
       <h1>Rate Management</h1>
       <CurrentRates rates={rates} />
       <div className="flex items-center ">
-        <div className="flex-[2] rounded-lg border border-slate-600 bg-slate-200 px-10 py-4">
+        <div className="flex-[4] rounded-lg border border-slate-600 bg-slate-200 px-10 py-4">
           <h4 className="mb-4 text-xl">New Rate Preview</h4>
           <div className="flex items-center text-[16px] font-light">
             {rates?.cowRate[0]?.OldRate__r != null && (

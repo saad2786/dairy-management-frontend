@@ -5,6 +5,11 @@ export async function getBillDetails(billId) {
       `${import.meta.env.VITE_BASE_URL}/bills/details/${billId}`,
       {
         method: "GET",
+         headers: {
+          "authorization": `Bearer ${localStorage.getItem('token')}`,
+          "Content-type": "application/json",
+          "Accept": "application/json",
+        }
       },
     );
     data = await res.json();

@@ -20,18 +20,20 @@ export default function Login() {
         method: "POST",
         mode: "cors",
         headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
           "Content-type": "application/json",
           Accept: "application/json",
         },
         body: JSON.stringify({ ...data }),
       });
       console.log(res);
-
+ 
       data = await res.json();
+      const token = data.token.trim()
+      localStorage.setItem('token',token)
       console.log(data);
-      const dairyId = data.Id;
-      const dairyName = data.Name;
+      const dairyId = data.user.userId;
+      const dairyName = data.user.username;
+      console.log(dairyId, dairyName)
       dispatch({
         type: "authenticate",
         payload: { dairyId, dairyName },

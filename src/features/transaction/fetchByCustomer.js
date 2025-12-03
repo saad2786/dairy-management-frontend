@@ -6,9 +6,10 @@ export async function fetchByCustomer({ dairyId, customerId }) {
       {
         method: "POST",
         mode: "cors",
-        headers: {
+         headers: {
+          "authorization": `Bearer ${localStorage.getItem('token')}`,
           "Content-type": "application/json",
-          Accept: "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify({ dairyId, customerId }),
       },

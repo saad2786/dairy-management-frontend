@@ -24,9 +24,10 @@ export default function CreateCustomer({ closeModal }) {
       method: "POST",
       mode: "cors",
       headers: {
-        "Content-type": "application/json",
-        Accept: "application/json",
-      },
+          "authorization": `Bearer ${localStorage.getItem('token')}`,
+          "Content-type": "application/json",
+          "Accept": "application/json",
+        },
       body: JSON.stringify({
         ...data,
         dairyId,

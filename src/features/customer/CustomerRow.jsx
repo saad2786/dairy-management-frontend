@@ -27,9 +27,10 @@ export default function CustomerRow({
       {
         method: "PUT",
         mode: "cors",
-        headers: {
+         headers: {
+          "authorization": `Bearer ${localStorage.getItem('token')}`,
           "Content-type": "application/json",
-          Accept: "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify({
           status: !status,

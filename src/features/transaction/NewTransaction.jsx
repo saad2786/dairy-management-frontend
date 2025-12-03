@@ -44,10 +44,11 @@ export default function NewTransaction({ closeModal }) {
         {
           method: "POST",
           mode: "cors",
-          headers: {
-            "Content-type": "application/json",
-            Accept: "application/json",
-          },
+           headers: {
+          "authorization": `Bearer ${localStorage.getItem('token')}`,
+          "Content-type": "application/json",
+          "Accept": "application/json",
+        },
           body: JSON.stringify({ ...data, dairyId }),
         },
       );

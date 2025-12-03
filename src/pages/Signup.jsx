@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Spinner from "../ui/Spinner";
 
 export default function Signup() {
@@ -169,6 +169,11 @@ export default function Signup() {
               >
                 {isLoading ? <Spinner /> : "Sign Up"}
               </button>
+              <Link to={'/login'}>
+              <p className="text-center text-sm text-blue-700 underline mt-3">
+              Login Account
+              </p>
+              </Link>
             </div>
           </form>
         </div>

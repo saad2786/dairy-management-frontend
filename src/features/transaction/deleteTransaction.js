@@ -6,6 +6,11 @@ export async function deleteTransaction(transactionId) {
       `${import.meta.env.VITE_BASE_URL}/transactions/${transactionId}`,
       {
         method: "DELETE",
+         headers: {
+          "authorization": `Bearer ${localStorage.getItem('token')}`,
+          "Content-type": "application/json",
+          "Accept": "application/json",
+        }
       },
     );
     data = await res.json();
